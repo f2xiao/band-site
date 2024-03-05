@@ -1,0 +1,31 @@
+@use "variables" as *;
+
+@mixin font($size, $weight, $height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+@mixin padding-all($width) {
+  padding: $width;
+}
+@mixin padding-top-bottom($top, $bottom) {
+  padding: $top 0 $bottom 0;
+}
+@mixin padding-left-right($side) {
+  padding: 0 $side;
+}
+
+@mixin flex-center($dir) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-even($dir) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: space-evenly;
+  align-items: center;
+}

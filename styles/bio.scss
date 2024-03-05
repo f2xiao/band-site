@@ -1,11 +1,12 @@
-@use "./partials/fonts" as *;
-@use "./partials/variables" as *;
+@use "partials/fonts" as *;
+@use "partials/variables" as *;
+@use "partials/mixins" as *;
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   // for debugging
-  border: 1px solid lightgrey;
+  // border: 1px dotted lightgrey;
 }
 
 a {
@@ -24,4 +25,38 @@ address {
 
 body {
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+  font-size: $font-text;
+  color: $color-primary-black;
+}
+
+.site-header {
+  background: $color-primary-black;
+  color: $color-primary-white;
+  @include flex-center(column);
+}
+
+.site-header__logo {
+  @include font($font-pgheader, 400, $lineHeight-header);
+  @include padding-top-bottom($padding-s, $padding-xs);
+  text-transform: uppercase;
+}
+.main-nav {
+  width: 100%;
+}
+.main-nav__list {
+  @include flex-even(row);
+}
+.main-nav__item {
+  flex-grow: 1;
+  text-align: center;
+}
+.main-nav__link {
+  color: $color-primary-white;
+  @include padding-top-bottom($padding-xs, $padding-xs);
+  width: 100%;
+}
+
+.main-nav__link:hover,
+.main-nav__link--active {
+  border-bottom: 3px solid white;
 }
