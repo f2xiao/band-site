@@ -26,6 +26,7 @@ address {
 body {
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
   font-size: $font-text;
+  @include font($font-text, 400, $lineHeight-text);
   color: $color-primary-black;
 }
 
@@ -62,7 +63,7 @@ body {
   &__link:hover,
   &__link--active {
     border-bottom: 3px solid white;
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 

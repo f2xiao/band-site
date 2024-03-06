@@ -36,6 +36,9 @@ address {
 body {
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
   font-size: 13px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
   color: #323232;
 }
 
@@ -75,7 +78,7 @@ body {
 }
 .navigation__link:hover, .navigation__link--active {
   border-bottom: 3px solid white;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .banner__wrapper {
