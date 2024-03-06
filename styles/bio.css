@@ -73,7 +73,7 @@ body {
 }
 .navigation__link {
   color: #ffffff;
-  padding: 8px 0 8px 0;
+  padding: 8px 0;
   min-width: 100%;
 }
 .navigation__link:hover, .navigation__link--active {
@@ -81,9 +81,12 @@ body {
   font-weight: 700;
 }
 
+.banner > * {
+  padding-left: 16px;
+  padding-right: 16px;
+}
 .banner__wrapper {
   height: 190px;
-  padding: 0 16px;
   background: center/cover no-repeat url("../assets/images/hero-bio.jpg");
   display: flex;
   flex-direction: row;
@@ -96,4 +99,30 @@ body {
   font-weight: 700;
   line-height: 32px;
   color: #ffffff;
+}
+
+.bio > * {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+}
+.bio__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 22px;
+  padding-top: 24px;
+}
+.bio__image {
+  display: inline-block;
+  width: 100%;
+}
+.bio__author {
+  padding-top: 8px;
+}
+.bio__body > * {
+  padding-bottom: 16px;
+}
+.bio__subtitle {
+  padding-top: 16px;
+  font-weight: 400;
 }/*# sourceMappingURL=bio.css.map */

@@ -37,7 +37,7 @@ body {
 
   &__title {
     @include font($font-pgheader, 400, $lineHeight-header);
-    @include padding-top-bottom($padding-s, $padding-xs);
+    padding: $padding-s 0 $padding-xs 0;
     text-transform: uppercase;
   }
 }
@@ -56,7 +56,7 @@ body {
 
   &__link {
     color: $color-primary-white;
-    @include padding-top-bottom($padding-xs, $padding-xs);
+    padding: $padding-xs 0;
     min-width: 100%;
   }
 
@@ -68,9 +68,12 @@ body {
 }
 
 .banner {
+  & > * {
+    padding-left: $padding-s;
+    padding-right: $padding-s;
+  }
   &__wrapper {
     height: 190px;
-    @include padding-left-right($padding-s);
     background: center / cover no-repeat url("../assets/images/hero-bio.jpg");
     @include flex-center(row);
     justify-content: flex-start;
@@ -78,5 +81,37 @@ body {
   &__title {
     @include font($font-pgheader, 700, $lineHeight-header);
     color: $color-primary-white;
+  }
+}
+
+.bio {
+  & > * {
+    padding-left: $padding-s;
+    padding-right: $padding-s;
+    padding-bottom: $padding-s;
+  }
+  &__title {
+    @include font($font-pgheader, 700, $lineHeight-subheader);
+    padding-top: $padding-m;
+  }
+  &__image {
+    display: inline-block;
+    width: 100%;
+  }
+  &__quote {
+  }
+  &__author {
+    padding-top: $padding-xs;
+  }
+  &__body {
+    & > * {
+      padding-bottom: $padding-s;
+    }
+  }
+  &__subtitle {
+    padding-top: $padding-s;
+    font-weight: 400;
+  }
+  &__copy {
   }
 }

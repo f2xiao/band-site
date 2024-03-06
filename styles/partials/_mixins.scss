@@ -6,16 +6,6 @@
   line-height: $height;
 }
 
-@mixin padding-all($width) {
-  padding: $width;
-}
-@mixin padding-top-bottom($top, $bottom) {
-  padding: $top 0 $bottom 0;
-}
-@mixin padding-left-right($side) {
-  padding: 0 $side;
-}
-
 @mixin flex-center($dir) {
   display: flex;
   flex-direction: $dir;
@@ -28,8 +18,4 @@
   flex-direction: $dir;
   justify-content: space-evenly;
   align-items: center;
-}
-
-@mixin mobile-minColWidth() {
-  min-width: calc((100vw - (16px * 2 + 16px * (6 - 1))) / 6);
 }
