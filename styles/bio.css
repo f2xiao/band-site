@@ -28,9 +28,7 @@ a {
   color: #e1e1e1;
 }
 
-a:active,
-a:hover {
-  border-bottom: 3px solid white;
+a:active {
   color: #ffffff;
   font-weight: 700;
 }
@@ -116,6 +114,7 @@ footer {
 .navigation__link--active {
   border-bottom: 3px solid white;
   font-weight: 700;
+  border-bottom: 3px solid white;
 }
 
 .banner__wrapper {

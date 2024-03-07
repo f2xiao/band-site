@@ -28,9 +28,7 @@ a {
   color: $color-secondary-mercury;
 }
 
-a:active,
-a:hover {
-  border-bottom: 3px solid white;
+a:active {
   color: $color-primary-white;
   font-weight: 700;
 }
