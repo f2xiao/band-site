@@ -55,3 +55,9 @@
   top: 0;
   left: 0;
 }
+
+@mixin device($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
