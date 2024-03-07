@@ -163,7 +163,7 @@ h3 {
   padding-right: 16px;
   padding-bottom: 16px;
 }
-.gallery__wrapper {
+.gallery__body {
   display: flex;
   flex-direction: column;
   gap: 16px;

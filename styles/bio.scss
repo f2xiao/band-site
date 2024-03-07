@@ -124,7 +124,7 @@ body {
 
   &__title {
   }
-  &__wrapper {
+  &__body {
     @include flex-gap(column, $padding-s);
   }
   &__image {
