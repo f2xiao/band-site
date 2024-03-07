@@ -3,9 +3,7 @@
 h1,
 h2,
 h3 {
-  padding: $padding-m 0 $padding-s 0;
-  // media queries for tablet
-  // media queris for desktop
+  @include padding-top-bottom;
 }
 main,
 p {

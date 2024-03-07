@@ -40,7 +40,8 @@ address {
 h1,
 h2,
 h3 {
-  padding: 24px 0 16px 0;
+  padding-top: 24px;
+  padding-bottom: 16px;
 }
 
 main,
