@@ -25,6 +25,7 @@ h3 {
 }
 
 a {
+  text-decoration: none;
   color: #e1e1e1;
 }
 
@@ -55,19 +56,14 @@ footer > * {
   padding-right: 16px;
 }
 
-a {
-  padding-top: 16px;
+li {
+  padding: 8px 0;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-a {
-  text-decoration: none;
-  display: inline-block;
 }
 
 ul,
@@ -92,6 +88,7 @@ footer {
   line-height: 32px;
   font-weight: 400;
   text-transform: uppercase;
+  padding-top: 8px;
 }
 
 .navigation {
@@ -107,15 +104,17 @@ footer {
 .navigation__item {
   flex-grow: 1;
   text-align: center;
+  padding: 8px 0;
+}
+.navigation__item--active {
+  border-bottom: 3px solid white;
 }
 .navigation__link {
   min-width: 100%;
   padding-bottom: 16px;
 }
 .navigation__link--active {
-  border-bottom: 3px solid white;
   font-weight: 700;
-  border-bottom: 3px solid white;
 }
 
 .banner__wrapper {
