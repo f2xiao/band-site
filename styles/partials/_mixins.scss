@@ -48,10 +48,16 @@
   // media query for desktop
 }
 
-@mixin padding-top-bottom {
+@mixin padding-top {
   padding-top: $padding-s;
   // media query for tablet
   // media query for desktop
+}
+
+@mixin flex-gap($dir, $gap) {
+  display: flex;
+  flex-direction: $dir;
+  gap: $gap;
 }
 
 @mixin flex-center($dir) {
@@ -64,4 +70,10 @@
 @mixin flex-even($dir) {
   @include flex-center($dir);
   justify-content: space-evenly;
+}
+
+@mixin abs-postion {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
