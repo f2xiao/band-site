@@ -35,11 +35,34 @@ address {
 
 body {
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 18px;
   color: #323232;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3 {
+  padding: 24px 0 16px 0;
 }
 
 .site-header {
@@ -50,11 +73,11 @@ body {
   justify-content: center;
   align-items: center;
 }
-.site-header__title {
+.site-header__logo {
+  padding-top: 16px;
   font-size: 24px;
-  font-weight: 400;
   line-height: 32px;
-  padding: 16px 0 8px 0;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -64,8 +87,9 @@ body {
 .navigation__list {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  justify-content: space-evenly;
 }
 .navigation__item {
   flex-grow: 1;
@@ -84,6 +108,7 @@ body {
 .banner > * {
   padding-left: 16px;
   padding-right: 16px;
+  padding-bottom: 16px;
 }
 .banner__wrapper {
   height: 190px;
@@ -95,9 +120,6 @@ body {
   justify-content: flex-start;
 }
 .banner__title {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 32px;
   color: #ffffff;
 }
 
@@ -107,9 +129,6 @@ body {
   padding-bottom: 16px;
 }
 .bio__title {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 22px;
   padding-top: 24px;
 }
 .bio__image {

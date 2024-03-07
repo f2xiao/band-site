@@ -25,19 +25,20 @@ address {
 
 body {
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
-  font-size: $font-text;
-  @include font($font-text, 400, $lineHeight-text);
   color: $color-primary-black;
+  @include body-copy;
 }
+
+@include styles-headers;
 
 .site-header {
   background: $color-primary-black;
   color: $color-primary-white;
   @include flex-center(column);
 
-  &__title {
-    @include font($font-pgheader, 400, $lineHeight-header);
-    padding: $padding-s 0 $padding-xs 0;
+  &__logo {
+    @include padding-top;
+    @include font(24px, 32px, 400);
     text-transform: uppercase;
   }
 }
@@ -68,10 +69,8 @@ body {
 }
 
 .banner {
-  & > * {
-    padding-left: $padding-s;
-    padding-right: $padding-s;
-  }
+  @include padding-sides;
+
   &__wrapper {
     height: 190px;
     background: center / cover no-repeat url("../assets/images/hero-bio.jpg");
@@ -79,19 +78,13 @@ body {
     justify-content: flex-start;
   }
   &__title {
-    @include font($font-pgheader, 700, $lineHeight-header);
     color: $color-primary-white;
   }
 }
 
 .bio {
-  & > * {
-    padding-left: $padding-s;
-    padding-right: $padding-s;
-    padding-bottom: $padding-s;
-  }
+  @include padding-sides;
   &__title {
-    @include font($font-pgheader, 700, $lineHeight-subheader);
     padding-top: $padding-m;
   }
   &__image {
