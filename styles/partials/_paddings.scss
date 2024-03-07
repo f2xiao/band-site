@@ -5,8 +5,10 @@ h2,
 h3 {
   @include padding-top-bottom;
 }
+
 main,
-p {
+p,
+blockquote {
   @include padding-bottom;
 }
 section,

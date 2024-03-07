@@ -1,6 +1,7 @@
 @use "variables" as *;
 @use "typography" as *;
 @use "paddings" as *;
+@use "mixins" as *;
 
 * {
   box-sizing: border-box;
@@ -13,9 +14,16 @@
 ul,
 li {
   list-style: none;
+  @include flex-abs-center(row);
 }
 header,
 footer {
   background: $color-primary-black;
   color: $color-primary-white;
+}
+header {
+  @include flex-abs-center(column);
+}
+blockquote {
+  font-weight: 600;
 }

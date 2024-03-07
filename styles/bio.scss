@@ -2,36 +2,32 @@
 @use "partials/mixins" as *;
 @use "partials/global" as *;
 
-.site-header {
-  @include flex-abs-center(column);
-
-  &__logo {
-    @include font(24px, 32px, 400);
-    text-transform: uppercase;
-    padding-top: 8px;
-  }
+.logo {
+  @include font(24px, 32px, 400);
+  text-transform: uppercase;
+  padding-top: 8px;
 }
 
 .navigation {
   width: 100%;
-
-  &__list {
-    @include flex-cross-center(row);
+  &--second {
+    width: 125px;
   }
 
   &__item {
     flex-grow: 1;
-    text-align: center;
-    padding: 8px 0;
+  }
+  &__item--left {
+    justify-content: flex-start;
   }
 
   &__item--active {
     border-bottom: 3px solid white;
   }
 
-  &__link {
-    min-width: 100%;
-    @include padding-bottom;
+  &__icon {
+    width: 25px;
+    height: 25px;
   }
 
   &__link--active {
@@ -62,17 +58,12 @@
 
 .bio {
   &__image {
-    display: inline-block;
     width: 100%;
     @include padding-bottom;
   }
-  &__quote {
+  &__author {
     font-weight: 600;
     padding-bottom: 0;
-  }
-  &__author {
-    display: inline-block;
-    padding-top: $padding-xs;
   }
 }
 .gallery {
@@ -82,31 +73,5 @@
     @include flex-gap(column, $padding-s);
   }
   &__image {
-    width: 100%;
-  }
-}
-
-.contact {
-  &__title {
-  }
-  &__wrapper {
-  }
-  &__link {
-  }
-  &__image {
-    width: 25px;
-    height: 25px;
-  }
-  &__info {
-  }
-  &__subtitle {
-  }
-  &__text {
-  }
-  &__email {
-  }
-  &__logo {
-  }
-  &__copyright {
   }
 }

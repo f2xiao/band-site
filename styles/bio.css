@@ -38,6 +38,10 @@ address {
   font-style: normal;
 }
 
+blockquote {
+  font-weight: 600;
+}
+
 h1,
 h2,
 h3 {
@@ -46,7 +50,8 @@ h3 {
 }
 
 main,
-p {
+p,
+blockquote {
   padding-bottom: 16px;
 }
 
@@ -69,6 +74,10 @@ li {
 ul,
 li {
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 header,
@@ -77,13 +86,18 @@ footer {
   color: #ffffff;
 }
 
-.site-header {
+header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.site-header__logo {
+
+blockquote {
+  font-weight: 600;
+}
+
+.logo {
   font-size: 24px;
   line-height: 32px;
   font-weight: 400;
@@ -94,24 +108,21 @@ footer {
 .navigation {
   width: 100%;
 }
-.navigation__list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-evenly;
+.navigation--second {
+  width: 125px;
 }
 .navigation__item {
   flex-grow: 1;
-  text-align: center;
-  padding: 8px 0;
+}
+.navigation__item--left {
+  justify-content: flex-start;
 }
 .navigation__item--active {
   border-bottom: 3px solid white;
 }
-.navigation__link {
-  min-width: 100%;
-  padding-bottom: 16px;
+.navigation__icon {
+  width: 25px;
+  height: 25px;
 }
 .navigation__link--active {
   font-weight: 700;
@@ -141,17 +152,12 @@ footer {
 }
 
 .bio__image {
-  display: inline-block;
   width: 100%;
   padding-bottom: 16px;
 }
-.bio__quote {
+.bio__author {
   font-weight: 600;
   padding-bottom: 0;
-}
-.bio__author {
-  display: inline-block;
-  padding-top: 8px;
 }
 
 .gallery {
@@ -161,12 +167,4 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-.gallery__image {
-  width: 100%;
-}
-
-.contact__image {
-  width: 25px;
-  height: 25px;
 }/*# sourceMappingURL=bio.css.map */
