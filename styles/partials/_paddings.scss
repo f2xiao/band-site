@@ -1,0 +1,22 @@
+@use "variables" as *;
+@use "mixins" as *;
+h1,
+h2,
+h3 {
+  padding: $padding-m 0 $padding-s 0;
+  // media queries for tablet
+  // media queris for desktop
+}
+main,
+p {
+  @include padding-bottom;
+}
+section,
+footer {
+  & > * {
+    @include padding-left-right;
+  }
+}
+a {
+  @include padding-top;
+}

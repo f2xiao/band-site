@@ -6,50 +6,20 @@
   font-weight: $weight;
 }
 
-@mixin body-copy {
-  @include font(13px, 18px, 400);
-  // media queries for tablet
-  // media queris for desktop
-}
-
-@mixin styles-headers {
-  h1 {
-    @include font(24px, 32px, 700);
-    // media queries for tablet
-    // media queris for desktop
-  }
-  h2 {
-    @include font(24px, 32px, 700);
-    // media queries for tablet
-    // media queris for desktop
-  }
-  h3 {
-    @include font(14px, 22px, 600);
-    // media queries for tablet
-    // media queris for desktop
-  }
-
-  h1,
-  h2,
-  h3 {
-    padding: $padding-m 0 $padding-s 0;
-    // media queries for tablet
-    // media queris for desktop
-  }
-}
-
-@mixin padding-sides {
-  & > * {
-    padding-left: $padding-s;
-    padding-right: $padding-s;
-    padding-bottom: $padding-s;
-  }
+@mixin padding-left-right {
+  padding-left: $padding-s;
+  padding-right: $padding-s;
   // media query for tablet
   // media query for desktop
 }
 
 @mixin padding-top {
   padding-top: $padding-s;
+  // media query for tablet
+  // media query for desktop
+}
+@mixin padding-bottom {
+  padding-bottom: $padding-s;
   // media query for tablet
   // media query for desktop
 }
@@ -60,15 +30,15 @@
   gap: $gap;
 }
 
-@mixin flex-center($dir) {
+@mixin flex-abs-center($dir) {
   display: flex;
   flex-direction: $dir;
   justify-content: center;
   align-items: center;
 }
 
-@mixin flex-even($dir) {
-  @include flex-center($dir);
+@mixin flex-cross-center($dir) {
+  @include flex-abs-center($dir);
   justify-content: space-evenly;
 }
 
