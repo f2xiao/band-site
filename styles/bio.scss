@@ -12,6 +12,13 @@
 a {
   text-decoration: none;
   display: inline-block;
+  color: $color-secondary-mercury;
+}
+
+a:active,
+a:hover {
+  color: $color-primary-white;
+  font-weight: 700;
 }
 
 ul,
@@ -56,7 +63,6 @@ body {
   }
 
   &__link {
-    color: $color-primary-white;
     padding: $padding-xs 0;
     min-width: 100%;
   }
@@ -129,5 +135,33 @@ body {
   }
   &__image {
     width: 100%;
+  }
+}
+
+.contact {
+  @include padding-sides;
+  background-color: $color-primary-black;
+  color: $color-primary-white;
+  &__title {
+  }
+  &__wrapper {
+  }
+  &__link {
+  }
+  &__image {
+    width: 25px;
+    height: 25px;
+  }
+  &__info {
+  }
+  &__subtitle {
+  }
+  &__text {
+  }
+  &__email {
+  }
+  &__logo {
+  }
+  &__copyright {
   }
 }

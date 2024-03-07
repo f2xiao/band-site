@@ -22,6 +22,13 @@
 a {
   text-decoration: none;
   display: inline-block;
+  color: #e1e1e1;
+}
+
+a:active,
+a:hover {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 ul,
@@ -96,7 +103,6 @@ h3 {
   text-align: center;
 }
 .navigation__link {
-  color: #ffffff;
   padding: 8px 0;
   min-width: 100%;
 }
@@ -170,4 +176,18 @@ h3 {
 }
 .gallery__image {
   width: 100%;
+}
+
+.contact {
+  background-color: #323232;
+  color: #ffffff;
+}
+.contact > * {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+}
+.contact__image {
+  width: 25px;
+  height: 25px;
 }/*# sourceMappingURL=bio.css.map */
