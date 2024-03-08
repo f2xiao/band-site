@@ -2,8 +2,8 @@
 @use "variables" as *;
 
 header {
-  background: $color-primary-black;
-  color: $color-primary-white;
+  background: $color-dark-bg;
+  color: $color-light-text;
   @include flex-abs-center(column);
   @include tablet {
     flex-direction: row;

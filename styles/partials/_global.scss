@@ -1,7 +1,5 @@
 @use "variables" as *;
 @use "mixins" as *;
-@use "fonts" as *;
-@use "paddings" as *;
 @use "header" as *;
 @use "footer" as *;
 
@@ -13,8 +11,65 @@
   // border: 1px dotted lightgrey;
 }
 
+body {
+  font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+  color: $color-dark-bg;
+  @include responsive-font(13px, 18px, 400, 14px, 22px, 400);
+}
+
+h1 {
+  @include responsive-font(24px, 32px, 700, 36px, 44px, 700);
+}
+
+h2 {
+  @include responsive-font(24px, 32px, 700, 36px, 44px, 600);
+}
+
+blockquote,
+h3 {
+  @include responsive-font(14px, 22px, 600, 24px, 32px, 600);
+}
+
+h1,
+h2,
+h3 {
+  @include padding-top-bottom;
+}
+
+main,
+p {
+  @include padding-bottom;
+}
+
+section,
+footer {
+  & > * {
+    @include padding-left-right;
+  }
+}
+
+address {
+  font-style: normal;
+  @include padding-top;
+}
+
 ul,
 li {
   list-style: none;
   @include flex-abs-center(row);
+}
+
+li {
+  @include padding-top;
+  @include padding-bottom;
+}
+
+a {
+  text-decoration: none;
+  color: $color-link;
+}
+
+a:active {
+  color: $color-light-text;
+  font-weight: 700;
 }

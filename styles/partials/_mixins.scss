@@ -1,51 +1,70 @@
 @use "variables" as *;
 
-@mixin font($size, $height, $weight) {
+// font
+@mixin font($size: 13px, $height: 18px, $weight: 400) {
   font-size: $size;
   line-height: $height;
   font-weight: $weight;
 }
 
-@mixin padding-top-bottom {
-  padding-top: $padding-s;
-  padding-bottom: $padding-xs;
+@mixin responsive-font(
+  $size-m,
+  $height-m,
+  $weight-m,
+  $size-t,
+  $height-t,
+  $weight-t
+) {
+  // mobile
+  @include font($size-m, $height-m, $weight-m);
+
   // media query for tablet and desktop
   @include tablet {
-    padding-top: $padding-m;
-    padding-bottom: $padding-s;
+    @include font($size-t, $height-t, $weight-t);
+  }
+}
+
+@mixin padding-two($pos1, $pos2, $val1, $val2) {
+  padding-#{$pos1}: $val1;
+  padding-#{$pos2}: $val2;
+}
+
+// padding
+@mixin padding-top-bottom {
+  @include padding-two(top, bottom, $padding-s, $padding-xs);
+  // media query for tablet and desktop
+  @include tablet {
+    @include padding-two(top, bottom, $padding-m, $padding-s);
   }
 }
 
 @mixin padding-left-right {
-  padding-left: $padding-s;
-  padding-right: $padding-s;
+  @include padding-two(left, right, $padding-s, $padding-s);
   // media query for tablet and desktop
   @include tablet {
-    padding-left: $padding-b;
-    padding-right: $padding-b;
+    @include padding-two(left, right, $padding-b, $padding-b);
   }
   @include desktop {
-    padding-left: 132px;
-    padding-right: 132px;
+    @include padding-two(left, right, 8.25rem, 8.25rem);
+  }
+}
+
+@mixin responsive-padding-one($pos, $val1: $padding-s, $val2: $padding-m) {
+  padding-#{$pos}: $val1;
+  // media query for tablet and desktop
+  @include tablet {
+    padding-#{$pos}: $val2;
   }
 }
 
 @mixin padding-top {
-  padding-top: $padding-s;
-  // media query for tablet and desktop
-  @include tablet {
-    padding-top: $padding-m;
-  }
+  @include responsive-padding-one(top);
 }
 
 @mixin padding-bottom {
-  padding-bottom: $padding-s;
-  // media query for tablet and desktop
-  @include tablet {
-    padding-bottom: $padding-m;
-  }
+  @include responsive-padding-one(bottom);
 }
-
+// flexbox
 @mixin flex-gap($dir, $gap) {
   display: flex;
   flex-direction: $dir;
@@ -70,6 +89,7 @@
   left: 0;
 }
 
+// media query
 @mixin tablet {
   @media (min-width: $tablet) {
     @content;

@@ -1,8 +1,8 @@
 @use "mixins" as *;
 @use "variables" as *;
 .site-footer {
-  background: $color-primary-black;
-  color: $color-primary-white;
+  background: $color-dark-bg;
+  color: $color-light-text;
   @include padding-bottom;
 
   &__social {

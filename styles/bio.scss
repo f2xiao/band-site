@@ -20,7 +20,7 @@
     background-color: rgba(32, 32, 32, 0.25);
   }
   &__title {
-    color: $color-primary-white;
+    color: $color-light-text;
     z-index: 1;
   }
 }
@@ -51,7 +51,7 @@
   }
 }
 .gallery {
-  background: $color-secondary-alabaster;
+  background: $color-light-bg;
   &__grid {
     flex-direction: column;
     gap: $padding-s;
