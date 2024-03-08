@@ -1,5 +1,6 @@
 @use "variables" as *;
 @use "mixins" as *;
+
 h1,
 h2,
 h3 {
@@ -7,16 +8,22 @@ h3 {
 }
 
 main,
-p,
-blockquote {
+p {
   @include padding-bottom;
 }
+
 section,
 footer {
   & > * {
     @include padding-left-right;
   }
 }
+
 li {
-  padding: $padding-xs 0;
+  @include padding-top;
+  @include padding-bottom;
+}
+
+address {
+  @include padding-top;
 }

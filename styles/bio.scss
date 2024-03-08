@@ -2,42 +2,11 @@
 @use "partials/mixins" as *;
 @use "partials/global" as *;
 
-.logo {
-  @include font(24px, 32px, 400);
-  text-transform: uppercase;
-  padding-top: 8px;
-}
-
-.navigation {
-  width: 100%;
-  &--second {
-    width: 125px;
-  }
-
-  &__item {
-    flex-grow: 1;
-  }
-  &__item--left {
-    justify-content: flex-start;
-  }
-
-  &__item--active {
-    border-bottom: 3px solid white;
-  }
-
-  &__icon {
-    width: 25px;
-    height: 25px;
-  }
-
-  &__link--active {
-    font-weight: 700;
-  }
-}
-
 .banner {
+  height: 60vw;
+  max-height: 650px;
   &__wrapper {
-    height: 190px;
+    height: 100%;
     background: center / cover no-repeat url("../assets/images/hero-bio.jpg");
     @include flex-abs-center(row);
     justify-content: flex-start;
@@ -57,21 +26,51 @@
 }
 
 .bio {
+  &__body {
+    @include tablet {
+      margin: 0 60px;
+    }
+    @include desktop {
+      margin: 0 90px;
+    }
+  }
   &__image {
     width: 100%;
-    @include padding-bottom;
+    height: 50vw;
   }
   &__author {
     font-weight: 600;
     padding-bottom: 0;
   }
+
+  &__copy {
+    @include tablet {
+      @include flex-cross-center(row);
+      gap: $padding-b;
+    }
+  }
 }
 .gallery {
   background: $color-secondary-alabaster;
-
-  &__body {
-    @include flex-gap(column, $padding-s);
+  &__grid {
+    flex-direction: column;
+    gap: $padding-s;
+    @include tablet {
+      gap: $padding-m;
+    }
   }
+
+  &__row {
+    padding: 0;
+    flex-direction: column;
+    gap: $padding-s;
+    @include tablet {
+      flex-direction: row;
+      gap: $padding-m;
+    }
+  }
+
   &__image {
+    width: 100%;
   }
 }

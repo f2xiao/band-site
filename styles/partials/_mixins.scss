@@ -7,29 +7,43 @@
 }
 
 @mixin padding-top-bottom {
-  padding-top: $padding-m;
-  padding-bottom: $padding-s;
-  // media query for tablet
-  // media query for desktop
+  padding-top: $padding-s;
+  padding-bottom: $padding-xs;
+  // media query for tablet and desktop
+  @include tablet {
+    padding-top: $padding-m;
+    padding-bottom: $padding-s;
+  }
 }
 
 @mixin padding-left-right {
   padding-left: $padding-s;
   padding-right: $padding-s;
-  // media query for tablet
-  // media query for desktop
+  // media query for tablet and desktop
+  @include tablet {
+    padding-left: $padding-b;
+    padding-right: $padding-b;
+  }
+  @include desktop {
+    padding-left: 132px;
+    padding-right: 132px;
+  }
 }
 
 @mixin padding-top {
   padding-top: $padding-s;
-  // media query for tablet
-  // media query for desktop
+  // media query for tablet and desktop
+  @include tablet {
+    padding-top: $padding-m;
+  }
 }
 
 @mixin padding-bottom {
   padding-bottom: $padding-s;
-  // media query for tablet
-  // media query for desktop
+  // media query for tablet and desktop
+  @include tablet {
+    padding-bottom: $padding-m;
+  }
 }
 
 @mixin flex-gap($dir, $gap) {
@@ -56,8 +70,14 @@
   left: 0;
 }
 
-@mixin device($breakpoint) {
-  @media (min-width: $breakpoint) {
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
     @content;
   }
 }

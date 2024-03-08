@@ -1,43 +1,18 @@
-@use "variables" as *;
-@use "mixins" as *;
-body {
-  font-family: "Avenir Next", Arial, Helvetica, sans-serif;
-  color: $color-primary-black;
-  @include font(13px, 18px, 400);
-  // media queries for tablet
-  // media queris for desktop
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTPro.ttf") format("truetype"),
+    url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
 }
-
-h1 {
-  @include font(24px, 32px, 700);
-  // media queries for tablet
-  // media queris for desktop
-}
-h2 {
-  @include font(24px, 32px, 700);
-  // media queries for tablet
-  // media queris for desktop
-}
-h3 {
-  @include font(14px, 22px, 600);
-  // media queries for tablet
-  // media queris for desktop
-}
-
-a {
-  text-decoration: none;
-  color: $color-secondary-mercury;
-}
-
-a:active {
-  color: $color-primary-white;
-  font-weight: 700;
-}
-
-address {
-  font-style: normal;
-}
-
-blockquote {
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype"),
+    url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTProBold.ttf") format("truetype"),
+    url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
 }

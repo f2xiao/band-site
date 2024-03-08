@@ -1,0 +1,29 @@
+@use "mixins" as *;
+@use "variables" as *;
+.site-footer {
+  background: $color-primary-black;
+  color: $color-primary-white;
+  @include padding-bottom;
+
+  &__social {
+    @include tablet {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding-top: 48px;
+    }
+  }
+
+  &__title {
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__contact {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
