@@ -24,78 +24,92 @@
   }
 }
 
-// padding
-@mixin padding-two($pos1, $pos2, $val1, $val2) {
-  padding-#{$pos1}: $val1;
-  padding-#{$pos2}: $val2;
-}
-
-@mixin padding-top-bottom {
-  @include padding-two(top, bottom, $padding-m, $padding-s);
-  // media query for tablet and desktop
+// margin
+@mixin responsive-margin {
   @include tablet {
-    @include padding-two(top, bottom, $padding-b, $padding-m);
-  }
-}
-
-@mixin padding-left-right {
-  @include padding-two(left, right, $padding-s, $padding-s);
-  // media query for tablet and desktop
-  @include tablet {
-    @include padding-two(left, right, $padding-b, $padding-b);
+    margin: 0 $margin-t;
   }
   @include desktop {
-    @include padding-two(left, right, $padding-h, $padding-h);
+    width: $max-width;
+    margin: 0 $margin-d;
   }
 }
 
-@mixin responsive-padding-one($pos, $val1: $padding-s, $val2: $padding-b) {
+// padding
+@mixin padding-two($val1, $val2) {
+  padding-top: $val1;
+  padding-bottom: $val2;
+}
+
+@mixin responsive-padding-top-bottom {
+  @include padding-two($padding-t, $padding-m);
+  // media query for tablet and desktop
+  @include tablet {
+    @include padding-two($padding-d, $padding-t);
+  }
+}
+
+@mixin responsive-padding-one(
+  $pos,
+  $val1: $padding-m,
+  $val2: $padding-t,
+  $val3: $padding-d
+) {
   padding-#{$pos}: $val1;
   // media query for tablet and desktop
   @include tablet {
     padding-#{$pos}: $val2;
   }
+  @include desktop {
+    padding-#{$pos}: $val3;
+  }
 }
 
-@mixin padding-top {
+@mixin responsive-padding-top {
   @include responsive-padding-one(top);
 }
 
-@mixin padding-bottom {
+@mixin responsive-padding-bottom {
   @include responsive-padding-one(bottom);
 }
 
+@mixin resposive-property($pro, $val1, $val2) {
+}
+
+// flexbox
 @mixin flex($dir: row) {
   display: flex;
   flex-direction: $dir;
 }
 
-@mixin logo {
-  @include font(1.5rem, 2rem, 400);
-  text-transform: uppercase;
-}
-
-// flexbox
-@mixin flex-gap($dir, $gap) {
-  @include flex($dir);
-  gap: $gap;
-}
-
-@mixin flex-abs-center($dir) {
+@mixin flex-abs-center($dir: row) {
   @include flex($dir);
   justify-content: center;
   align-items: center;
 }
 
 @mixin flex-cross-center($dir) {
-  @include flex-abs-center($dir);
+  @include flex($dir);
   justify-content: space-evenly;
+  align-items: center;
 }
 
 @mixin abs-postion {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+@mixin logo {
+  @include font(1.5rem, 2rem, 400);
+  text-transform: uppercase;
+  @include flex(column);
+  justify-content: flex-end;
+  height: 50%;
+  @include tablet {
+    height: 100%;
+    justify-content: center;
+  }
 }
 
 // media query

@@ -4,15 +4,14 @@ $color-link: #e1e1e1;
 $color-light-bg: #fafafa;
 
 // padding: xsmall, small, medium, big, huge
-$padding-xs: 8px;
-$padding-s: 16px;
-$padding-m: 24px;
-$padding-b: 32px;
-$padding-h: 130px;
+$padding-m: 1rem;
+$padding-t: 1.5rem;
+$padding-d: 2.25rem;
 
-$margin-m: 16px;
-$margin-t: 36px;
+$margin-m: 1rem;
+$margin-t: 2.25rem;
 $margin-d: auto;
+$max-width: 63.75rem;
 
 // breakpoint
 $tablet: 768px;

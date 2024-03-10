@@ -4,15 +4,17 @@
 
 .banner {
   height: 60vw;
-  max-height: 650px;
+  max-height: 39.375rem;
+  position: relative;
+  background: center / cover no-repeat url("../assets/images/hero-bio.jpg");
 
   &__wrapper {
     height: 100%;
-    background: center / cover no-repeat url("../assets/images/hero-bio.jpg");
+    margin: 0 $margin-m;
+    @include responsive-margin;
 
     @include flex-abs-center(row);
     justify-content: flex-start;
-    position: relative;
   }
 
   &__overlay {
@@ -29,6 +31,9 @@
 }
 
 .bio {
+  margin: 0 $margin-m;
+  @include responsive-margin;
+
   &__body {
     @include tablet {
       margin: 0 3.75rem;
@@ -41,41 +46,54 @@
 
   &__image {
     width: 100%;
-    height: 50vw;
+    height: 48vw;
+    @include tablet {
+      height: 40vw;
+    }
+    @include desktop {
+      height: 35vw;
+    }
   }
 
   &__author {
-    font-weight: 600;
     padding-bottom: 0;
+    padding-top: $padding-m;
+    @include tablet {
+      padding-top: $padding-t;
+    }
   }
 
   &__copy {
     @include tablet {
       @include flex-cross-center(row);
-      gap: $padding-b;
+      gap: $padding-t;
     }
   }
 }
 .gallery {
   background: $color-light-bg;
-  @include padding-bottom;
+  @include responsive-padding-bottom;
+  &__wrapper {
+    margin: 0 $margin-m;
+    @include responsive-margin;
+  }
 
   &__grid {
     flex-direction: column;
-    gap: $padding-s;
+    gap: $padding-m;
     @include tablet {
-      gap: $padding-m;
+      gap: $padding-t;
     }
   }
 
   &__row {
     padding: 0;
     flex-direction: column;
-    gap: $padding-s;
+    gap: $padding-m;
 
     @include tablet {
       flex-direction: row;
-      gap: $padding-m;
+      gap: $padding-t;
     }
   }
 
@@ -84,7 +102,7 @@
     height: auto;
 
     @include tablet {
-      max-width: calc(33% - $padding-s);
+      max-width: calc(33% - $padding-t);
     }
   }
 }

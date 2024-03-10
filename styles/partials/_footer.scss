@@ -3,15 +3,19 @@
 .site-footer {
   background: $color-dark-bg;
   color: $color-link;
-  @include padding-bottom;
-  @include padding-top;
+  @include responsive-padding-bottom;
+  @include responsive-padding-top;
+
+  &__wrapper {
+    margin: 0 1rem;
+    @include responsive-margin;
+  }
 
   &__social {
-    flex-wrap: nowrap;
     @include tablet {
-      display: flex;
+      @include flex;
       align-items: center;
-      gap: 32px;
+      gap: 2rem;
     }
   }
 
@@ -23,24 +27,21 @@
 
   &__contact {
     @include tablet {
-      display: flex;
+      @include flex;
       justify-content: space-between;
-    }
-    @include desktop {
-      max-width: 64%;
-      padding-right: 0;
+      max-width: 43.5rem;
     }
   }
 
   &__row {
-    display: flex;
+    @include flex;
     align-items: center;
     justify-content: space-between;
   }
 
   &__logo {
-    padding-top: $padding-s;
     @include logo;
+    padding-top: $padding-t;
     display: block;
     @include tablet {
       display: none;

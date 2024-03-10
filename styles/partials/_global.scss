@@ -7,14 +7,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  // for debugging
-  // border: 1px dotted lightgrey;
 }
 
 body {
   font-family: "Avenir Next", Arial, Helvetica, sans-serif;
   color: $color-dark-bg;
-  @include responsive-font(13px, 18px, 400, 14px, 22px, 400);
+  @include responsive-font(0.8125rem, 1.125rem, 400, 0.875rem, 1.375rem, 400);
 }
 
 h1 {
@@ -31,35 +29,32 @@ h3 {
 }
 
 footer {
-  @include responsive-font(13px, 18px, 400, 14px, 20px, 400);
+  @include responsive-font(0.8125rem, 1.125rem, 400, 0.875rem, 1.25rem, 400);
 }
 
 h1,
 h2,
 h3 {
-  @include padding-top-bottom;
+  @include responsive-padding-top-bottom;
 }
 
 p {
-  @include padding-bottom;
-}
-
-section,
-footer {
-  & > * {
-    @include padding-left-right;
-  }
+  @include responsive-padding-bottom;
 }
 
 address {
   font-style: normal;
-  @include padding-top;
+}
+
+address,
+blockquote {
+  @include responsive-padding-top;
 }
 
 ul,
 li {
   list-style: none;
-  @include flex-abs-center(row);
+  @include flex-abs-center();
 }
 
 a {
