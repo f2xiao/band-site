@@ -2,15 +2,16 @@
 @use "variables" as *;
 .site-footer {
   background: $color-dark-bg;
-  color: $color-light-text;
+  color: $color-link;
   @include padding-bottom;
+  @include padding-top;
 
   &__social {
+    flex-wrap: nowrap;
     @include tablet {
       display: flex;
       align-items: center;
       gap: 32px;
-      padding-top: 48px;
     }
   }
 
@@ -24,6 +25,32 @@
     @include tablet {
       display: flex;
       justify-content: space-between;
+    }
+    @include desktop {
+      max-width: 64%;
+      padding-right: 0;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    padding-top: $padding-s;
+    @include logo;
+    display: block;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__logo--second {
+    display: none;
+    @include tablet {
+      display: block;
     }
   }
 }

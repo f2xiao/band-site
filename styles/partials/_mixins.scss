@@ -1,7 +1,7 @@
 @use "variables" as *;
 
 // font
-@mixin font($size: 13px, $height: 18px, $weight: 400) {
+@mixin font($size: 0.8125rem, $height: 1.125rem, $weight: 400) {
   font-size: $size;
   line-height: $height;
   font-weight: $weight;
@@ -24,17 +24,17 @@
   }
 }
 
+// padding
 @mixin padding-two($pos1, $pos2, $val1, $val2) {
   padding-#{$pos1}: $val1;
   padding-#{$pos2}: $val2;
 }
 
-// padding
 @mixin padding-top-bottom {
-  @include padding-two(top, bottom, $padding-s, $padding-xs);
+  @include padding-two(top, bottom, $padding-m, $padding-s);
   // media query for tablet and desktop
   @include tablet {
-    @include padding-two(top, bottom, $padding-m, $padding-s);
+    @include padding-two(top, bottom, $padding-b, $padding-m);
   }
 }
 
@@ -45,11 +45,11 @@
     @include padding-two(left, right, $padding-b, $padding-b);
   }
   @include desktop {
-    @include padding-two(left, right, 8.25rem, 8.25rem);
+    @include padding-two(left, right, $padding-h, $padding-h);
   }
 }
 
-@mixin responsive-padding-one($pos, $val1: $padding-s, $val2: $padding-m) {
+@mixin responsive-padding-one($pos, $val1: $padding-s, $val2: $padding-b) {
   padding-#{$pos}: $val1;
   // media query for tablet and desktop
   @include tablet {
@@ -64,16 +64,25 @@
 @mixin padding-bottom {
   @include responsive-padding-one(bottom);
 }
-// flexbox
-@mixin flex-gap($dir, $gap) {
+
+@mixin flex($dir: row) {
   display: flex;
   flex-direction: $dir;
+}
+
+@mixin logo {
+  @include font(1.5rem, 2rem, 400);
+  text-transform: uppercase;
+}
+
+// flexbox
+@mixin flex-gap($dir, $gap) {
+  @include flex($dir);
   gap: $gap;
 }
 
 @mixin flex-abs-center($dir) {
-  display: flex;
-  flex-direction: $dir;
+  @include flex($dir);
   justify-content: center;
   align-items: center;
 }

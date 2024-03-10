@@ -1,62 +1,78 @@
 @use "mixins" as *;
 @use "variables" as *;
 
-header {
+.site-header {
   background: $color-dark-bg;
   color: $color-light-text;
+  @include padding-top;
   @include flex-abs-center(column);
+
   @include tablet {
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
     gap: calc($padding-b * 2);
     @include padding-left-right;
+    padding-top: 0;
   }
 }
 
-.logo {
-  @include font(24px, 32px, 400);
-  text-transform: uppercase;
+.site-header__logo {
+  @include logo;
 }
 
 .navigation {
-  width: 100%;
-
-  &--second {
-    width: 125px;
+  &--full {
+    width: 100%;
   }
 
   &__list {
+    gap: 2rem;
+
     @include tablet {
       justify-content: flex-start;
-      gap: $padding-b;
+      gap: 4rem;
+    }
+
+    &--second {
+      gap: 2rem;
     }
   }
 
   &__item {
     flex-grow: 1;
-    display: inline-flex;
-  }
+    padding: $padding-xs 0;
 
-  &__item--short {
     @include tablet {
       flex-grow: 0;
+      padding: $padding-m 0;
+    }
+
+    @include desktop {
+      padding: $padding-b 0;
+    }
+
+    &--left {
+      justify-content: flex-start;
+    }
+
+    &--active {
+      border-bottom: 3px solid white;
     }
   }
 
-  &__item--left {
-    justify-content: flex-start;
-  }
-
-  &__item--active {
-    border-bottom: 3px solid white;
-  }
-
   &__icon {
-    width: 25px;
-    height: 25px;
+    width: auto;
+    height: 1.5625rem;
   }
 
-  &__link--active {
-    font-weight: 700;
+  &__link {
+    &--second {
+      height: 1.5625rem;
+    }
+
+    &--active {
+      font-weight: 700;
+    }
   }
 }

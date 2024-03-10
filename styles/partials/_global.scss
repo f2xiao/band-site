@@ -18,16 +18,20 @@ body {
 }
 
 h1 {
-  @include responsive-font(24px, 32px, 700, 36px, 44px, 700);
+  @include responsive-font(1.5rem, 2rem, 700, 3.75rem, 4.25rem, 700);
 }
 
 h2 {
-  @include responsive-font(24px, 32px, 700, 36px, 44px, 600);
+  @include responsive-font(1.5rem, 2rem, 700, 2.25rem, 2.75rem, 600);
 }
 
 blockquote,
 h3 {
-  @include responsive-font(14px, 22px, 600, 24px, 32px, 600);
+  @include responsive-font(0.875rem, 1.375rem, 600, 1.5rem, 2rem, 600);
+}
+
+footer {
+  @include responsive-font(13px, 18px, 400, 14px, 20px, 400);
 }
 
 h1,
@@ -36,7 +40,6 @@ h3 {
   @include padding-top-bottom;
 }
 
-main,
 p {
   @include padding-bottom;
 }
@@ -57,11 +60,6 @@ ul,
 li {
   list-style: none;
   @include flex-abs-center(row);
-}
-
-li {
-  @include padding-top;
-  @include padding-bottom;
 }
 
 a {
