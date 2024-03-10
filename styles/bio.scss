@@ -66,6 +66,7 @@
   &__copy {
     @include tablet {
       @include flex-cross-center(row);
+      justify-content: space-evenly;
       gap: $padding-t;
     }
   }

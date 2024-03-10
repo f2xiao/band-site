@@ -73,25 +73,20 @@
   @include responsive-padding-one(bottom);
 }
 
-@mixin resposive-property($pro, $val1, $val2) {
-}
-
 // flexbox
 @mixin flex($dir: row) {
   display: flex;
   flex-direction: $dir;
 }
 
-@mixin flex-abs-center($dir: row) {
+@mixin flex-cross-center($dir: row) {
   @include flex($dir);
-  justify-content: center;
   align-items: center;
 }
 
-@mixin flex-cross-center($dir) {
-  @include flex($dir);
-  justify-content: space-evenly;
-  align-items: center;
+@mixin flex-abs-center($dir: row) {
+  @include flex-cross-center($dir);
+  justify-content: center;
 }
 
 @mixin abs-postion {

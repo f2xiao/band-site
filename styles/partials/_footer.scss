@@ -13,8 +13,7 @@
 
   &__social {
     @include tablet {
-      @include flex;
-      align-items: center;
+      @include flex-cross-center;
       gap: 2rem;
     }
   }
@@ -34,8 +33,7 @@
   }
 
   &__row {
-    @include flex;
-    align-items: center;
+    @include flex-cross-center;
     justify-content: space-between;
   }
 
@@ -50,6 +48,7 @@
 
   &__logo--second {
     display: none;
+    padding: 0;
     @include tablet {
       display: block;
     }
