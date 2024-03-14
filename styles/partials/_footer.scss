@@ -11,16 +11,19 @@
     @include responsive-margin;
   }
 
-  &__social {
+  &__row {
+    @include flex-cross-center;
+    flex-wrap: wrap;
     @include tablet {
-      @include flex-cross-center;
-      gap: 2rem;
+      flex-wrap: nowrap;
     }
   }
 
   &__title {
+    flex-basis: 100%;
     @include tablet {
       padding: 0;
+      flex-basis: 15.75rem;
     }
   }
 
@@ -30,11 +33,6 @@
       justify-content: space-between;
       max-width: 43.5rem;
     }
-  }
-
-  &__row {
-    @include flex-cross-center;
-    justify-content: space-between;
   }
 
   &__logo {

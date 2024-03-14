@@ -42,6 +42,12 @@
     width: 100%;
   }
 
+  &--second {
+    @include tablet {
+      flex-grow: 1;
+    }
+  }
+
   &__list {
     height: 100%;
 
