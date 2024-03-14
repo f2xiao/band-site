@@ -474,23 +474,13 @@ a:active {
     margin: 0 auto;
   }
 }
-.gallery__grid {
-  flex-direction: column;
+.gallery__body {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 @media (min-width: 768px) {
-  .gallery__grid {
-    gap: 1.5rem;
-  }
-}
-.gallery__row {
-  padding: 0;
-  flex-direction: column;
-  gap: 1rem;
-}
-@media (min-width: 768px) {
-  .gallery__row {
-    flex-direction: row;
+  .gallery__body {
     gap: 1.5rem;
   }
 }
@@ -500,6 +490,6 @@ a:active {
 }
 @media (min-width: 768px) {
   .gallery__image {
-    max-width: calc(33% - 1.5rem);
+    max-width: calc((100% - 3rem) / 3);
   }
 }/*# sourceMappingURL=bio.css.map */

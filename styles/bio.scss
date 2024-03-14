@@ -79,21 +79,11 @@
     @include responsive-margin;
   }
 
-  &__grid {
-    flex-direction: column;
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
     gap: $padding-m;
     @include tablet {
-      gap: $padding-t;
-    }
-  }
-
-  &__row {
-    padding: 0;
-    flex-direction: column;
-    gap: $padding-m;
-
-    @include tablet {
-      flex-direction: row;
       gap: $padding-t;
     }
   }
@@ -103,7 +93,7 @@
     height: auto;
 
     @include tablet {
-      max-width: calc(33% - $padding-t);
+      max-width: calc((100% - 2 * $padding-t) / 3);
     }
   }
 }
