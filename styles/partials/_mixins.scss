@@ -119,3 +119,18 @@
     @content;
   }
 }
+
+@mixin avatar {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  content: "";
+  border-radius: 50%;
+  background: $color-link;
+  margin-top: $margin-m;
+  margin-right: $margin-m;
+  @include tablet {
+    width: 3rem;
+    height: 3rem;
+  }
+}

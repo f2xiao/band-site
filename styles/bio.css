@@ -218,14 +218,16 @@
   padding: 0;
 }
 
+input,
 body {
-  font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+  font-family: "Avenir Next", Helvetica, sans-serif;
   color: #323232;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
+  input,
   body {
     font-size: 0.875rem;
     line-height: 1.375rem;
@@ -274,12 +276,16 @@ h3 {
   }
 }
 
+label,
+button,
 footer {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
 }
 @media (min-width: 768px) {
+  label,
+  button,
   footer {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -354,6 +360,46 @@ a {
 a:active {
   color: #ffffff;
   font-weight: 700;
+}
+
+button {
+  color: #ffffff;
+  height: 2.5rem;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  background: #323232;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  button {
+    min-width: 9.375rem;
+  }
+}
+
+input {
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+}
+@media (min-width: 768px) {
+  input {
+    padding: 1rem;
+  }
+}
+
+input:active {
+  border-color: #323232;
+}
+
+input:required:invalid {
+  border-color: #d22d2d;
+}
+
+textarea {
+  border: 1px solid #e1e1e1;
 }
 
 .banner {
@@ -497,5 +543,161 @@ a:active {
 @media (min-width: 768px) {
   .gallery__image {
     max-width: calc((100% - 3rem) / 3);
+  }
+}
+
+.comments {
+  margin: 0 1rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .comments {
+    margin: 0 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comments {
+    width: 63.75rem;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) {
+  .comments {
+    padding-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comments {
+    padding-bottom: 2.25rem;
+  }
+}
+.comments__form {
+  position: relative;
+  padding-left: 3.125rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .comments__form {
+    padding-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comments__form {
+    padding-bottom: 2.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .comments__form {
+    margin-left: 3.75rem;
+    padding-left: 4.125rem;
+  }
+}
+.comments__form::before {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  content: "";
+  border-radius: 50%;
+  background: #e1e1e1;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  background: center/cover no-repeat url(../assets/images/Mohan-muruge.jpg);
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+}
+@media (min-width: 768px) {
+  .comments__form::before {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.comments__label {
+  color: #e1e1e1;
+}
+.comments__textarea {
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .comments__button {
+    width: 30%;
+    align-self: flex-end;
+  }
+}
+.comments__list {
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .comments__list {
+    padding-left: 3.75rem;
+  }
+}
+.comments__item {
+  min-width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-bottom: 1px solid #e1e1e1;
+}
+.comments__item:first-of-type {
+  border-top: 1px solid #e1e1e1;
+}
+.comments__item::before {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  content: "";
+  border-radius: 50%;
+  background: #e1e1e1;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+@media (min-width: 768px) {
+  .comments__item::before {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.comments__name {
+  flex-grow: 1;
+  font-weight: 700;
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .comments__name {
+    padding-top: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comments__name {
+    padding-top: 2.25rem;
+  }
+}
+.comments__timestamp {
+  padding-top: 1rem;
+  color: #e1e1e1;
+}
+@media (min-width: 768px) {
+  .comments__timestamp {
+    padding-top: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comments__timestamp {
+    padding-top: 2.25rem;
+  }
+}
+.comments__text {
+  padding-left: 3.125rem;
+  min-width: 100%;
+}
+@media (min-width: 768px) {
+  .comments__text {
+    padding-left: 4.125rem;
   }
 }/*# sourceMappingURL=bio.css.map */

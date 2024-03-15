@@ -97,3 +97,93 @@
     }
   }
 }
+
+.comments {
+  margin: 0 $margin-m;
+  @include responsive-margin;
+  @include responsive-padding-bottom;
+
+  &__form {
+    position: relative;
+    padding-left: 3.125rem;
+    @include responsive-padding-bottom;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      margin-left: 3.75rem;
+      padding-left: 4.125rem;
+    }
+
+    &::before {
+      @include avatar;
+      background: center / cover no-repeat
+        url(../assets/images/Mohan-muruge.jpg);
+      position: absolute;
+      top: 0.5rem;
+      left: 0;
+    }
+  }
+
+  &__label {
+    color: $color-link;
+  }
+
+  &__input {
+  }
+
+  &__textarea {
+    padding: 0.5rem;
+    margin-top: 0.2rem;
+    margin-bottom: $margin-m;
+    width: 100%;
+  }
+
+  &__button {
+    @include tablet {
+      width: 30%;
+      align-self: flex-end;
+    }
+  }
+
+  &__list {
+    flex-direction: column;
+    @include tablet {
+      padding-left: 3.75rem;
+    }
+  }
+
+  &__item {
+    min-width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom: 1px solid $color-link;
+
+    &:first-of-type {
+      border-top: 1px solid $color-link;
+    }
+    &::before {
+      @include avatar;
+    }
+  }
+
+  &__name {
+    flex-grow: 1;
+    font-weight: 700;
+    @include responsive-padding-top;
+  }
+
+  &__timestamp {
+    @include responsive-padding-top;
+    color: $color-link;
+  }
+
+  &__text {
+    padding-left: 3.125rem;
+    min-width: 100%;
+    @include tablet {
+      padding-left: 4.125rem;
+    }
+  }
+}
