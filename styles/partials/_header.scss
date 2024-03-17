@@ -70,6 +70,12 @@
       max-width: fit-content;
     }
 
+    &--hover {
+      &:not(.navigation__item--active):hover {
+        border-bottom: 0.1875rem solid white;
+      }
+    }
+
     &--left {
       justify-content: flex-start;
     }

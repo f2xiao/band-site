@@ -109,6 +109,9 @@
     max-width: fit-content;
   }
 }
+.navigation__item--hover:not(.navigation__item--active):hover {
+  border-bottom: 0.1875rem solid white;
+}
 .navigation__item--left {
   justify-content: flex-start;
 }

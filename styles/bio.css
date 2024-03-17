@@ -109,6 +109,9 @@
     max-width: fit-content;
   }
 }
+.navigation__item--hover:not(.navigation__item--active):hover {
+  border-bottom: 0.1875rem solid white;
+}
 .navigation__item--left {
   justify-content: flex-start;
 }
@@ -596,7 +599,7 @@ td {
 }
 @media (min-width: 80rem) {
   .bio__image {
-    height: 460px;
+    height: 28.75rem;
   }
 }
 .bio__author {
