@@ -1,0 +1,57 @@
+@use "partials/variables" as *;
+@use "partials/mixins" as *;
+@use "partials/global" as *;
+@use "partials/banner" as *;
+
+// shows
+.shows {
+  margin: 0 $margin-m;
+  @include responsive-margin;
+  @include responsive-padding-bottom;
+
+  @include desktop {
+    display: flex;
+    gap: 8.125rem;
+  }
+
+  &__header {
+    display: none;
+    @include tablet {
+      display: table-cell;
+    }
+  }
+
+  &__row {
+    @include flex(column);
+
+    @include tablet {
+      display: table-row;
+    }
+
+    &--selected {
+      @include tablet {
+        background: $color-link;
+      }
+    }
+  }
+
+  &__date {
+    font-weight: 700;
+    @include show("DATE");
+  }
+
+  &__venue {
+    @include show("VENUE");
+  }
+
+  &__location {
+    @include show("LOCATION");
+  }
+
+  &__button {
+    @include cta;
+    text-transform: uppercase;
+    @include flex-abs-center;
+    z-index: 1;
+  }
+}
