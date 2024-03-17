@@ -5,16 +5,17 @@ $color-light-bg: #fafafa;
 $color-cta: #000000;
 $color-error: #d22d2d;
 
-// padding: xsmall, small, medium, big, huge
+// padding: mobile, tablet, desktop
 $padding-m: 1rem;
 $padding-t: 1.5rem;
 $padding-d: 2.25rem;
 
+// margin: mobile, tablet, desktop
 $margin-m: 1rem;
 $margin-t: 2.25rem;
 $margin-d: auto;
 $max-width: 63.75rem;
 
-// breakpoint
+// breakpoint: 768px, 1280px
 $tablet: 48rem;
 $desktop: 80rem;
