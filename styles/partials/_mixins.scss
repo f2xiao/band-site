@@ -134,3 +134,33 @@
     height: 3rem;
   }
 }
+
+@mixin cta {
+  color: $color-light-text;
+  height: 2.5rem;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  background: $color-dark-bg;
+  width: 100%;
+
+  &:hover {
+    background: $color-cta;
+  }
+
+  @include tablet {
+    min-width: 9.375rem;
+  }
+}
+
+@mixin show($text) {
+  &::before {
+    content: $text;
+    color: $color-link;
+    display: block;
+    font-weight: 400;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}

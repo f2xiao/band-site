@@ -1,3 +1,4 @@
+@use "typography" as *;
 @use "variables" as *;
 @use "mixins" as *;
 @use "header" as *;
@@ -9,6 +10,7 @@
   padding: 0;
 }
 
+textarea,
 input,
 body {
   font-family: "Avenir Next", Helvetica, sans-serif;
@@ -71,22 +73,13 @@ a:active {
 }
 
 button {
-  color: $color-light-text;
-  height: 2.5rem;
-  padding: 0 2rem;
-  border-radius: 0.25rem;
-  background: $color-dark-bg;
-  width: 100%;
-  @include tablet {
-    min-width: 9.375rem;
-  }
+  @include cta;
 }
+
 input {
   margin-top: 0.25rem;
   margin-bottom: $margin-m;
   width: 100%;
-  border: 1px solid $color-link;
-  border-radius: 0.25rem;
   padding: 0.75rem;
   @include tablet {
     padding: 1rem;
@@ -97,10 +90,48 @@ input:active {
   border-color: $color-dark-bg;
 }
 
-input:required:invalid {
-  border-color: $color-error;
-}
-
+input,
 textarea {
   border: 1px solid $color-link;
+  border-radius: 0.25rem;
+  background: $color-light-bg;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  @include desktop {
+    margin-top: 3rem;
+  }
+}
+
+th {
+  color: $color-link;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+tr {
+  width: 100%;
+  border-bottom: 1px solid $color-link;
+  &:first-of-type {
+    border-bottom: none;
+  }
+  padding-bottom: 1rem;
+
+  &:not(:first-child):not(.shows__row--selected):hover {
+    @include tablet {
+      background: $color-light-bg;
+      cursor: pointer;
+    }
+  }
+}
+
+td {
+  @include responsive-padding-bottom;
+  padding: 1rem;
+  vertical-align: baseline;
+  @include tablet {
+    padding: 1.5rem 1.125rem;
+  }
 }
