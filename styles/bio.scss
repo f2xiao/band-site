@@ -1,34 +1,7 @@
 @use "partials/variables" as *;
 @use "partials/mixins" as *;
 @use "partials/global" as *;
-
-.banner {
-  height: 60vw;
-  max-height: 39.375rem;
-  position: relative;
-  background: center / cover no-repeat url("../assets/images/hero-bio.jpg");
-
-  &__wrapper {
-    height: 100%;
-    margin: 0 $margin-m;
-    @include responsive-margin;
-
-    @include flex-abs-center(row);
-    justify-content: flex-start;
-  }
-
-  &__overlay {
-    width: 100%;
-    height: 100%;
-    @include abs-postion;
-    background-color: rgba(32, 32, 32, 0.5);
-  }
-
-  &__title {
-    color: $color-light-text;
-    z-index: 1;
-  }
-}
+@use "partials/banner" as *;
 
 .bio {
   margin: 0 $margin-m;
@@ -51,7 +24,7 @@
       height: 40vw;
     }
     @include desktop {
-      height: 35vw;
+      height: 460px;
     }
   }
 
@@ -130,6 +103,9 @@
   }
 
   &__input {
+    &--error {
+      background: $color-error;
+    }
   }
 
   &__textarea {
