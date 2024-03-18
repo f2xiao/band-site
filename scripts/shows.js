@@ -1,36 +1,4 @@
-const shows = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane ",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 17 2024 ",
-    venue: "Pier 3 East ",
-    location: "San Francisco, CA ",
-  },
-  {
-    date: "Sat Oct 12 2024 ",
-    venue: "View Lounge ",
-    location: "San Francisco, CA ",
-  },
-  {
-    date: "Sat Nov 16 2024 ",
-    venue: "Hyatt Agency ",
-    location: "San Francisco, CA ",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center ",
-    location: "San Francisco, CA ",
-  },
-  {
-    date: "Wed Dec 18 2024 ",
-    venue: "Press Club ",
-    location: "San Francisco, CA",
-  },
-];
-
+import BandSiteApi from "./BandSiteApi.js";
 /* <tr>
     <th class="shows__header">Date</th>
     <th class="shows__header">Venue</th>
@@ -86,11 +54,16 @@ const createTableRowEl = () => {
     linkEl: linkEl,
   };
 };
+// convert date in ms to date
+const dateString = (ms) => {
+  const date = new Date(ms);
+  return date.toDateString();
+};
 
-const renderEachRow = ({ date, venue, location }) => {
+const renderEachRow = ({ date, place, location }) => {
   const { trEl, tdEl1, tdEl2, tdEl3, tdEl4, linkEl } = createTableRowEl();
-  tdEl1.textContent = date;
-  tdEl2.textContent = venue;
+  tdEl1.textContent = dateString(date);
+  tdEl2.textContent = place;
   tdEl3.textContent = location;
   linkEl.textContent = "Buy Tickets";
   linkEl.href = "#";
@@ -104,12 +77,30 @@ const renderEachRow = ({ date, venue, location }) => {
 
 const renderShows = (shows, tableEl) => {
   tableEl.textContent = "";
-  tableEl.appendChild(createTableHeaderEl(["DATE", "VENUE", "LOCATION"]));
-  shows.forEach(renderEachRow);
+  // console.log(shows);
+
+  if (shows.length > 0) {
+    tableEl.appendChild(createTableHeaderEl(["DATE", "VENUE", "LOCATION"]));
+    shows.forEach(renderEachRow);
+  } else {
+    tableEl.textContent = "No shows yet";
+  }
 };
 
 const tableEl = document.querySelector(".shows__table");
-renderShows(shows, tableEl);
+const apiKey = "9cd15e0f-1dba-47d8-b301-f0f22314686f";
+const bandApi = new BandSiteApi(apiKey);
+async function getAndRenderShows() {
+  try {
+    const shows = await bandApi.getShows();
+    renderShows(shows, tableEl);
+  } catch (error) {
+    console.log(error);
+    tableEl.textContent = "Failed to get shows";
+  }
+}
+
+getAndRenderShows();
 
 // selected state after click
 const rows = tableEl.getElementsByTagName("tr");
