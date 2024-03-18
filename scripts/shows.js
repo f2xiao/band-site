@@ -88,7 +88,7 @@ const renderShows = (shows, tableEl) => {
 };
 
 const tableEl = document.querySelector(".shows__table");
-const apiKey = "9cd15e0f-1dba-47d8-b301-f0f22314686f";
+const apiKey = "e0fb7894-462d-43cb-bf8d-d45a7b2998ea";
 const bandApi = new BandSiteApi(apiKey);
 async function getAndRenderShows() {
   try {
