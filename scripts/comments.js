@@ -10,6 +10,9 @@ const createElwClass = (tag, className) => {
 //     <p class="comments__name"></p>
 //     <p class="comments__timestamp"></p>
 //     <p class="comments__text"></p>
+//     <img class="comments__delete" src="../assets/icons/icon-delete.svg" data-id="">
+//     <img class="comments__like" src="../assets/icons/icon-like.svg" data-id="">
+//     <span class="comments__likestats"></span>
 //  </li>
 
 const createNewCommentEl = () => {
@@ -17,25 +20,47 @@ const createNewCommentEl = () => {
   const pEl = createElwClass("p", "comments__name");
   const pEl1 = createElwClass("p", "comments__timestamp");
   const pEl2 = createElwClass("p", "comments__text");
+  const deleteIcon = createElwClass("img", "comments__delete");
+  const likeIcon = createElwClass("img", "comments__like");
+  const likestats = createElwClass("span", "comments__likestats");
 
   liEl.appendChild(pEl);
   liEl.appendChild(pEl1);
   liEl.appendChild(pEl2);
+  liEl.appendChild(deleteIcon);
+  liEl.appendChild(likeIcon);
+  liEl.appendChild(likestats);
 
-  return { liEl, pEl, pEl1, pEl2 };
+  return { liEl, pEl, pEl1, pEl2, deleteIcon, likeIcon, likestats };
 };
 
-const renderEachComment = ({ name, timestamp, comment }) => {
-  const { liEl, pEl, pEl1, pEl2 } = createNewCommentEl();
+const renderEachComment = ({ name, timestamp, comment, id, likes }) => {
+  const { liEl, pEl, pEl1, pEl2, deleteIcon, likeIcon, likestats } =
+    createNewCommentEl();
   pEl.textContent = name;
   pEl1.textContent = new Date(timestamp).toLocaleDateString();
   pEl2.textContent = comment;
+  // delete icon
+  deleteIcon.src = "../assets/icons/icon-delete.svg";
+  deleteIcon.dataset.id = id;
+  deleteIcon.addEventListener("click", handleDelete);
+
+  // like icon
+  likeIcon.src = "../assets/icons/icon-like.svg";
+  likeIcon.dataset.id = id;
+  likeIcon.addEventListener("click", handleLike);
+  likestats.textContent = likes;
+
   listEl.appendChild(liEl);
 };
 
 const renderComments = (comments) => {
   listEl.textContent = "";
-  comments.forEach(renderEachComment);
+  if (comments.length === 0) {
+    listEl.textContent = "No Comments yet";
+  } else {
+    comments.forEach(renderEachComment);
+  }
 };
 
 const formEl = document.querySelector(".comments__form");
@@ -54,7 +79,9 @@ async function getAndRenderComments() {
       (commenta, commentb) => commentb.timestamp - commenta.timestamp
     );
 
-    // console.log(comments);
+    // console.log("rendering: ", comments);
+    console.log(comments.length);
+
     renderComments(comments);
   } catch (error) {
     console.log(error);
@@ -64,7 +91,10 @@ async function getAndRenderComments() {
 
 getAndRenderComments();
 
-// test: vivi vivi is here again
+// test 1: vivi vivi is here again
+// test 2: viva viva la vida
+// test 3: invisible invisible season 2 part 2 is out
+// test 4: bochi guitar hero is me!!!!!
 
 const handleSubmit = async (event) => {
   event.preventDefault();
@@ -72,20 +102,41 @@ const handleSubmit = async (event) => {
   const newComment = {
     name: formEl.commentName.value,
     comment: formEl.commentText.value,
-    // timestamp: new Date().getTime(),
   };
-  console.log(newComment);
+  // console.log(newComment);
 
   try {
     const comment = await bandApi.postComment(newComment);
-    // renderComments([newComment, ...comments]);
+    console.log(comment);
+
     getAndRenderComments();
-    formEl.commentName.value = "";
-    formEl.commentText.value = "";
+    event.target.reset();
   } catch (error) {
     console.log(error);
     alert("failed to comment");
   }
+};
+
+const handleDelete = async (event) => {
+  event.stopPropagation();
+  // console.log(event.target.dataset.id);
+  try {
+    const response = await bandApi.deleteComment(event.target.dataset.id);
+    getAndRenderComments();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const handleLike = async (event) => {
+  try {
+    event.stopPropagation();
+    // console.log(event.target.dataset.id);
+    const id = event.target.dataset.id;
+    const response = await bandApi.likeComment(id);
+
+    getAndRenderComments();
+  } catch (error) {}
 };
 
 formEl.addEventListener("submit", handleSubmit);
