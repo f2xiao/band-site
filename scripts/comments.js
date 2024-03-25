@@ -56,11 +56,7 @@ const renderEachComment = ({ name, timestamp, comment, id, likes }) => {
 
 const renderComments = (comments) => {
   listEl.textContent = "";
-  if (comments.length === 0) {
-    listEl.textContent = "No Comments yet";
-  } else {
-    comments.forEach(renderEachComment);
-  }
+  comments.forEach(renderEachComment);
 };
 
 const formEl = document.querySelector(".comments__form");
@@ -70,11 +66,14 @@ const apiKey = "e0fb7894-462d-43cb-bf8d-d45a7b2998ea";
 const bandApi = new BandSiteApi(apiKey);
 
 async function getAndRenderComments() {
-  try {
-    const comments = await bandApi.getComments();
-    // sort the comments with the newest date at the top
-    // console.log(comments);
+  const comments = await bandApi.getComments();
+  // sort the comments with the newest date at the top
+  // console.log(comments);
 
+  if (comments.length === 0) {
+    listEl.textContent = "No comments yet";
+    return;
+  } else {
     comments.sort(
       (commenta, commentb) => commentb.timestamp - commenta.timestamp
     );
@@ -83,9 +82,6 @@ async function getAndRenderComments() {
     console.log(comments.length);
 
     renderComments(comments);
-  } catch (error) {
-    console.log(error);
-    listEl.textContent = " Failed to get comments";
   }
 }
 
@@ -104,39 +100,27 @@ const handleSubmit = async (event) => {
     comment: formEl.commentText.value,
   };
   // console.log(newComment);
+  const comment = await bandApi.postComment(newComment);
+  console.log(comment);
 
-  try {
-    const comment = await bandApi.postComment(newComment);
-    console.log(comment);
-
-    getAndRenderComments();
-    event.target.reset();
-  } catch (error) {
-    console.log(error);
-    alert("failed to comment");
-  }
+  getAndRenderComments();
+  event.target.reset();
 };
 
 const handleDelete = async (event) => {
   event.stopPropagation();
   // console.log(event.target.dataset.id);
-  try {
-    const response = await bandApi.deleteComment(event.target.dataset.id);
-    getAndRenderComments();
-  } catch (error) {
-    console.log(error);
-  }
+  const response = await bandApi.deleteComment(event.target.dataset.id);
+  getAndRenderComments();
 };
 
 const handleLike = async (event) => {
-  try {
-    event.stopPropagation();
-    // console.log(event.target.dataset.id);
-    const id = event.target.dataset.id;
-    const response = await bandApi.likeComment(id);
+  event.stopPropagation();
+  // console.log(event.target.dataset.id);
+  const id = event.target.dataset.id;
+  const response = await bandApi.likeComment(id);
 
-    getAndRenderComments();
-  } catch (error) {}
+  getAndRenderComments();
 };
 
 formEl.addEventListener("submit", handleSubmit);

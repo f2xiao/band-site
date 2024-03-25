@@ -91,25 +91,20 @@ const tableEl = document.querySelector(".shows__table");
 const apiKey = "e0fb7894-462d-43cb-bf8d-d45a7b2998ea";
 const bandApi = new BandSiteApi(apiKey);
 async function getAndRenderShows() {
-  try {
-    const shows = await bandApi.getShows();
-    renderShows(shows, tableEl);
+  const shows = await bandApi.getShows();
+  renderShows(shows, tableEl);
 
-    // selected state after click
-    const rows = tableEl.getElementsByTagName("tr");
-    // console.log(rows);
-    for (let i = 0; i < rows.length; i++) {
-      rows[i].addEventListener("click", function (event) {
-        event.stopPropagation();
-        for (let j = 0; j < rows.length; j++) {
-          rows[j].classList.remove("shows__row--selected");
-        }
-        this.classList.add("shows__row--selected");
-      });
-    }
-  } catch (error) {
-    console.log(error);
-    tableEl.textContent = "Failed to get shows";
+  // selected state after click
+  const rows = tableEl.getElementsByTagName("tr");
+  // console.log(rows);
+  for (let i = 0; i < rows.length; i++) {
+    rows[i].addEventListener("click", function (event) {
+      event.stopPropagation();
+      for (let j = 0; j < rows.length; j++) {
+        rows[j].classList.remove("shows__row--selected");
+      }
+      this.classList.add("shows__row--selected");
+    });
   }
 }
 
