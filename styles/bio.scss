@@ -166,7 +166,6 @@
   &__delete {
     padding-left: 3.125rem;
     height: 18px;
-    // fill: $color-link;
     cursor: pointer;
     @include tablet {
       padding-left: 4.125rem;
@@ -176,7 +175,6 @@
   &__like {
     padding-left: 0.5rem;
     height: 18px;
-    // fill: $color-link;
     cursor: pointer;
   }
   &__likestats {
