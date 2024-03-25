@@ -11,7 +11,7 @@ class BandSiteApi {
       );
       return response.data;
     } catch (err) {
-      console.log(err);
+      console.log("Get comments error: ", err);
     }
   }
 
@@ -22,9 +22,9 @@ class BandSiteApi {
         comment
       );
       console.log(response.status);
-      return response;
+      return response.data;
     } catch (err) {
-      console.log(err);
+      console.log(("Post comment error: ", err));
     }
   }
 
@@ -35,9 +35,9 @@ class BandSiteApi {
       );
       console.log(response);
 
-      return response;
+      return response.data;
     } catch (error) {
-      console.log(error);
+      console.log("Delete comment error: ", error);
     }
   }
 
@@ -50,7 +50,7 @@ class BandSiteApi {
 
       return response.data;
     } catch (error) {
-      console.log(error);
+      console.log("Like comment error: ", error);
     }
   }
 
@@ -61,7 +61,7 @@ class BandSiteApi {
       );
       return response.data;
     } catch (err) {
-      console.log(err);
+      console.log("Get shows error: ", error);
     }
   }
 }
