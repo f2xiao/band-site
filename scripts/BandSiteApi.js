@@ -61,7 +61,7 @@ class BandSiteApi {
       );
       return response.data;
     } catch (err) {
-      console.log("Get shows error: ", error);
+      console.log("Get shows error: ", err);
     }
   }
 }
