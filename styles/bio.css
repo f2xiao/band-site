@@ -422,6 +422,10 @@ textarea {
   background: #fafafa;
 }
 
+textarea {
+  resize: none;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;

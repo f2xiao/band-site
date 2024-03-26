@@ -97,6 +97,10 @@ textarea {
   background: $color-light-bg;
 }
 
+textarea {
+  resize: none;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
