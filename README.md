@@ -4,14 +4,14 @@
 
 This is a landing page of a music band with band bios and venues!. Please feel free to try my website, and really appreciate if you can give any feedback to me.
 
-[BanSite Website](https://band-site.onrender.com)
+[BanSite Website](https://f2xiao.github.io/band-site)
 
 ## Demo Video
 
 https://github.com/f2xiao/band-site/blob/main/screenshot/Demo.gif
 
-![BanSite Bio Page](https://github.com/f2xiao/band-site/blob/main/screenshot/bio_page.png)
-![BanSite Shows Page](https://github.com/f2xiao/band-site/blob/main/screenshot/shows_page.png)
+![BanSite Bio Page](https://github.com/f2xiao/band-site/blob/main/screenshots/bio_page.png)
+![BanSite Shows Page](https://github.com/f2xiao/band-site/blob/main/screenshots/shows_page.png)
 
 ### Description
 
