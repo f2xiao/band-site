@@ -485,7 +485,8 @@ td {
   height: 60vw;
   max-height: 39.375rem;
   position: relative;
-  background: center/cover no-repeat url("./assets/images/hero-bio.jpg");
+  background: center/cover no-repeat
+    url("https://raw.githubusercontent.com/f2xiao/band-site/main/assets/images/hero-bio.jpg");
 }
 .banner--second {
   height: 17.0625rem;
@@ -496,7 +497,8 @@ td {
   }
 }
 .banner--bg {
-  background: center/cover no-repeat url("./assets/images/hero-shows.jpg");
+  background: center/cover no-repeat
+    url("https://raw.githubusercontent.com/f2xiao/band-site/main/assets/images/hero-shows.jpg");
 }
 .banner__wrapper {
   height: 100%;
