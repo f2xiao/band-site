@@ -8,7 +8,7 @@ This is a landing page of a music band with band bios and venues!. Please feel f
 
 ## Demo Video
 
-https://github.com/f2xiao/band-site/blob/main/screenshot/Demo.gif
+https://github.com/user-attachments/assets/cf1a0f10-a45f-430b-8968-75033bb4b1e9
 
 ![BanSite Bio Page](https://github.com/f2xiao/band-site/blob/main/screenshot/bio_page.png)
 ![BanSite Shows Page](https://github.com/f2xiao/band-site/blob/main/screenshot/shows_page.png)
