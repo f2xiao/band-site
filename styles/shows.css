@@ -1,19 +1,16 @@
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTPro.ttf") format("truetype"),
-    url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("../../assets/fonts/AvenirNextLTPro.ttf") format("truetype"), url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype"),
-    url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../../assets/fonts/AvenirNextLTProDemi.ttf") format("truetype"), url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 600;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextLTProBold.ttf") format("truetype"),
-    url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/fonts/AvenirNextLTProBold.ttf") format("truetype"), url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 700;
 }
 .site-header {
@@ -485,8 +482,7 @@ td {
   height: 60vw;
   max-height: 39.375rem;
   position: relative;
-  background: center/cover no-repeat
-    url("https://raw.githubusercontent.com/f2xiao/band-site/main/assets/images/hero-bio.jpg");
+  background: center/cover no-repeat url("https://raw.githubusercontent.com/f2xiao/band-site/main/assets/images/hero-bio.jpg");
 }
 .banner--second {
   height: 17.0625rem;
@@ -497,8 +493,7 @@ td {
   }
 }
 .banner--bg {
-  background: center/cover no-repeat
-    url("https://raw.githubusercontent.com/f2xiao/band-site/main/assets/images/hero-shows.jpg");
+  background: center/cover no-repeat url("https://raw.githubusercontent.com/f2xiao/band-site/main/assets/images/hero-shows.jpg");
 }
 .banner__wrapper {
   height: 100%;
@@ -683,4 +678,4 @@ td {
   .shows__button {
     min-width: 9.375rem;
   }
-} /*# sourceMappingURL=shows.css.map */
+}/*# sourceMappingURL=shows.css.map */

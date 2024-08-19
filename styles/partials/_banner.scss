@@ -5,7 +5,8 @@
   height: 60vw;
   max-height: 39.375rem;
   position: relative;
-  background: center / cover no-repeat url("../../assets/images/hero-bio.jpg");
+  background: center / cover no-repeat
+    url("https://raw.githubusercontent.com/f2xiao/band-site/main/assets/images/hero-bio.jpg");
 
   &--second {
     height: 17.0625rem;
@@ -16,7 +17,7 @@
 
   &--bg {
     background: center / cover no-repeat
-      url("../../assets/images/hero-shows.jpg");
+      url("https://raw.githubusercontent.com/f2xiao/band-site/main/assets/images/hero-shows.jpg");
   }
 
   &__wrapper {
