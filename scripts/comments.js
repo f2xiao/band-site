@@ -41,12 +41,12 @@ const renderEachComment = ({ name, timestamp, comment, id, likes }) => {
   pEl1.textContent = new Date(timestamp).toLocaleDateString();
   pEl2.textContent = comment;
   // delete icon
-  deleteIcon.src = "../assets/icons/icon-delete.svg";
+  deleteIcon.src = "./assets/icons/icon-delete.svg";
   deleteIcon.dataset.id = id;
   deleteIcon.addEventListener("click", handleDelete);
 
   // like icon
-  likeIcon.src = "../assets/icons/icon-like.svg";
+  likeIcon.src = "./assets/icons/icon-like.svg";
   likeIcon.dataset.id = id;
   likeIcon.addEventListener("click", handleLike);
   likestats.textContent = likes;
